@@ -74,24 +74,24 @@ const slider = () => {
         }
     });
 
-    //Event on swipe left or rigth
-    let touchstartX = 0;
-    let touchendX = 0;
+    // //Event on swipe left or rigth
+    // let touchstartX = 0;
+    // let touchendX = 0;
 
-    const checkDirection = () => {
-        if (touchendX < touchstartX) next();
-        if (touchendX > touchstartX) previous();
-    }
+    // const checkDirection = () => {
+    //     if (touchendX < touchstartX) next();
+    //     if (touchendX > touchstartX) previous();
+    // }
 
-    document.addEventListener('touchstart', e => {
-        touchstartX = e.changedTouches[0].screenX;
-        checkDirection();
-    })
+    // document.addEventListener('touchstart', e => {
+    //     touchstartX = e.changedTouches[0].screenX;
+    //     checkDirection();
+    // })
 
-    document.addEventListener('touchend', e => {
-        touchendX = e.changedTouches[0].screenX;
-        checkDirection();
-    })
+    // document.addEventListener('touchend', e => {
+    //     touchendX = e.changedTouches[0].screenX;
+    //     checkDirection();
+    // })
 }
 
 export default slider;
