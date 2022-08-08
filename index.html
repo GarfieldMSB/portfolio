@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <title>Portada</title>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="sidebar">
+            <a href="#home"><img src="img/logo.png" alt="logo" class="logo"></a>
+            <div class="menu">
+                <ul>
+                    <a class="nav-link"  href="#home">
+                        <li id="0" class="item">
+                            Inicio
+                        </li>
+                    </a>
+                    <a class="nav-link" href="#aboutme">
+                        <li id="1" class="item">
+                            Sobre mi
+                        </li>
+                    </a>
+                    <a class="nav-link" href="#projects">
+                        <li id="2" class="item">
+                            Proyectos
+                        </li>
+                    </a>
+                    <a class="nav-link" href="#contact">
+                        <li id="3" class="item">
+                            Contacto
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="inicio">
+            <div id="particles-js"></div>
+            <div class="container-slider">
+                <div class="slider" id="slider">
+
+                    <div id="0" class="slider__section active">
+                        <div class="presentation">
+                            <div class="name">
+                                <h1>Matias Sepulveda</h1>
+                                <h3>Desarrollador FullStack</h3>
+                            </div>
+                            <div class="emoji">
+                                <img src="img/avataaars.svg" alt="emoji">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="1" class="slider__section">
+                        <h1>Sobre mí</h1>
+                    </div>
+
+                    <div id="2" class="slider__section">
+                        <h1>Proyectos</h1>
+                    </div>
+
+                    <div id="3" class="slider__section">
+                        <h1>Contacto</h1>
+                    </div>
+                    <div class="slider__btns">
+                        <a class="slider__btn slider__btn--left" id="btn-left" href="#">&#60;</a>
+                        <a class="slider__btn slider__btn--right" id="btn-right" href="#">&#62;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 
+            <div class="presentation">
+                <div class="name">
+                    <h1>Matias Sepulveda</h1>
+                    <h3>Desarrollador FullStack</h3>
+                </div>
+                <div class="emoji">
+                    <img src="img/avataaars.svg" alt="emoji">
+                </div>
+            </div>
+            -->
+
+        </div>
+        <div class="footer">
+            <hr width="100" />
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-github fa-2x"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin fa-2x"></i></a></li>
+            </ul>
+            <hr width="100" />
+        </div>
+    </div>
+
+    <!-- JS Particles -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+
+</html>

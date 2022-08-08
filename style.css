@@ -1,0 +1,309 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+* h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+* h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+#particles-js {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+}
+
+.grid-container {
+  background: #211159;
+  color: #fff;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 8% 92%;
+  grid-template-rows: 93% 7%;
+  grid-template-areas: "sidebar inicio" "sidebar footer";
+}
+.grid-container .sidebar {
+  height: 100vh;
+  width: 100%;
+  grid-area: sidebar;
+  background-color: #060516;
+}
+.grid-container .sidebar .logo {
+  width: 100%;
+}
+.grid-container .sidebar .menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.grid-container .sidebar .menu a {
+  list-style: none;
+  text-decoration: none;
+}
+.grid-container .sidebar .menu a :hover {
+  transform: translateY(0) translateX(50px);
+  background-color: #060516;
+  transition-duration: 600ms;
+}
+.grid-container .sidebar .menu .item {
+  border-top: 1px solid #b38cda;
+  font-family: moonlight;
+  height: 50px;
+  text-align: center;
+  color: #CDCDCD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid-container .sidebar .menu .item.activate {
+  box-shadow: 0px 0.5px 0.5px #b38cda;
+}
+.grid-container .inicio {
+  height: 100%;
+  width: 100%;
+  grid-area: inicio;
+  display: flex;
+  align-items: center;
+}
+.grid-container .inicio .presentation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 99;
+}
+.grid-container .inicio .presentation .name {
+  width: 40%;
+  margin-left: 10%;
+  font-size: 2rem;
+  letter-spacing: 5px;
+}
+.grid-container .inicio .presentation .emoji {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+.grid-container .inicio .container-slider {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 99;
+}
+.grid-container .inicio .container-slider .slider {
+  height: 100%;
+  position: relative;
+}
+.grid-container .inicio .container-slider .slider .slider__section {
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+}
+.grid-container .inicio .container-slider .slider .slider__section.active {
+  opacity: 1;
+  visibility: visible;
+}
+.grid-container .inicio .container-slider .slider .slider__btns {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 40px;
+  z-index: 99;
+}
+.grid-container .inicio .container-slider .slider .slider__btns .slider__btn--right {
+  margin-right: 10px;
+}
+.grid-container .inicio .container-slider .slider .slider__btns .slider__btn--left {
+  margin-left: 10px;
+}
+.grid-container .inicio .container-slider .slider .slider__btns .slider__btn {
+  color: #fff;
+  cursor: pointer;
+}
+.grid-container .inicio .container-slider .slider .slider__btns a {
+  text-decoration: none;
+}
+.grid-container .footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 20px;
+  grid-area: footer;
+}
+.grid-container .footer ul {
+  display: inline-flex;
+  list-style: none;
+  grid-gap: 30px;
+}
+.grid-container .footer ul i {
+  color: #CDCDCD;
+}
+.grid-container .footer hr {
+  border-color: #b38cda;
+  box-shadow: 0 0 5px 1px #b38cda;
+}
+
+/*Tablet*/
+/*Portrait*/
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation: portrait) {
+  .grid-container {
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: auto;
+    grid-template-rows: 7% 86% 7%;
+    grid-template-areas: "sidebar" "inicio" "footer";
+  }
+  .grid-container .sidebar {
+    background: transparent;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    z-index: 100;
+  }
+  .grid-container .sidebar .logo {
+    height: 100%;
+  }
+  .grid-container .sidebar .menu {
+    margin: 0;
+    height: 100%;
+  }
+  .grid-container .sidebar .menu ul {
+    display: flex;
+    height: 100%;
+  }
+  .grid-container .sidebar .menu ul a {
+    width: 150px;
+    padding: 10px;
+  }
+  .grid-container .sidebar .menu ul a :hover {
+    transform: none;
+    background-color: rgba(6, 5, 22, 0.3);
+  }
+  .grid-container .sidebar .menu ul a li {
+    height: 100%;
+  }
+  .grid-container .inicio {
+    width: 100%;
+  }
+  .grid-container .inicio .emoji {
+    margin-left: 50px;
+  }
+}
+/*landscape*/
+@media (min-width: 991.98px) and (max-width: 1199.98px) and (orientation: landscape) {
+  .grid-container {
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: auto;
+    grid-template-rows: 7% 86% 7%;
+    grid-template-areas: "sidebar" "inicio" "footer";
+  }
+  .grid-container .sidebar {
+    background: transparent;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+  }
+  .grid-container .sidebar .logo {
+    height: 100%;
+  }
+  .grid-container .sidebar .menu {
+    margin: 0;
+    height: 100%;
+  }
+  .grid-container .sidebar .menu ul {
+    display: flex;
+    height: 100%;
+  }
+  .grid-container .sidebar .menu ul a {
+    width: 150px;
+    padding: 10px;
+  }
+  .grid-container .sidebar .menu ul a :hover {
+    transform: none;
+    background-color: rgba(6, 5, 22, 0.3);
+  }
+  .grid-container .sidebar .menu ul a li {
+    height: 100%;
+  }
+  .grid-container .inicio {
+    width: 100%;
+  }
+  .grid-container .inicio .emoji {
+    margin-left: 50px;
+  }
+}
+/*fin tablet*/
+/*movil*/
+/*Portrait*/
+/*Default*/
+@media (max-width: 575.98px) and (orientation: portrait) {
+  .grid-container {
+    background: green;
+  }
+}
+/*landscape*/
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation: landscape) {
+  .grid-container {
+    background: black;
+  }
+}
+/*fin movil*/
+@font-face {
+  font-family: "moonbold";
+  src: url("fonts/moonbold-webfont.woff2") format("woff2"), url("./fonts/moonbold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "moonbold2";
+  src: url("fonts/moonbold2-webfont.woff2") format("woff2"), url("fonts/moonbold2-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "moonlight";
+  src: url("fonts/moonlight-webfont.woff2") format("woff2"), url("fonts/moonlight-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "moonlight2";
+  src: url("fonts/moonlight2-webfont.woff2") format("woff2"), url("fonts/moonlight2-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "moonregular2";
+  src: url("fonts/moonregular-webfont.woff2") format("woff2"), url("fonts/moonregular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "covesbold";
+  src: url("fonts/covesbold-webfont.woff2") format("woff2"), url("fonts/covesbold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "coveslight";
+  src: url("fonts/coveslight-webfont.woff2") format("woff2"), url("fonts/coveslight-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}/*# sourceMappingURL=style.css.map */
