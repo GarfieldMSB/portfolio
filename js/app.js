@@ -1,8 +1,10 @@
 import slider from "./slider.js"
+import projects from "./projects.js";
 
 
 document.addEventListener("DOMContentLoaded", (e) => {
     slider();
+    projects();
 })
 
 

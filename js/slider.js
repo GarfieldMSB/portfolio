@@ -60,6 +60,7 @@ const slider = () => {
             goSection(id);
         }
         if (e.target === logo) {
+            e.preventDefault();
             goFirst();
         }
     })
@@ -67,9 +68,11 @@ const slider = () => {
     //Event on scroll to change slider
     document.addEventListener('wheel', (e) => {
         if (e.deltaY < 0) {
+            e.preventDefault();
             previous();
         }
         else if (e.deltaY > 0) {
+            e.preventDefault();
             next();
         }
     });
