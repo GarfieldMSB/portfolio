@@ -6,6 +6,7 @@ const slider = () => {
 
     let i = 0;
 
+    //Function go to previus slide
     const previous = () => {
         slides[i].classList.remove('active');
         i--;
@@ -17,6 +18,7 @@ const slider = () => {
         slides[i].classList.add('active');
     }
 
+    //Function go to next slide
     const next = () => {
         slides[i].classList.remove('active');
         i++;
@@ -28,6 +30,7 @@ const slider = () => {
         slides[i].classList.add('active');
     }
 
+    //Function go to slide selected
     const goSection = (id) => {
         slides[i].classList.remove('active');
 
@@ -36,16 +39,20 @@ const slider = () => {
         slides[id].classList.add('active');
     }
 
+
+    //Function go first slide
     const goFirst = () => {
         slides[i].classList.remove('active');
         i = 0;
         slides[i].classList.add('active')
     }
 
+
+    goFirst();
     //Event on click to change slider
     document.addEventListener('click', e => {
         let id = 0;
-
+        
         if (e.target === leftBtn) {
             e.preventDefault();
             previous();
@@ -68,11 +75,9 @@ const slider = () => {
     //Event on scroll to change slider
     document.addEventListener('wheel', (e) => {
         if (e.deltaY < 0) {
-            e.preventDefault();
             previous();
         }
         else if (e.deltaY > 0) {
-            e.preventDefault();
             next();
         }
     });

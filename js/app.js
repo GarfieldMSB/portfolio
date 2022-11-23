@@ -1,10 +1,10 @@
 import slider from "./slider.js"
-import projects from "./projects.js";
+import project from "./project.js";
 
 
 document.addEventListener("DOMContentLoaded", (e) => {
+    project();
     slider();
-    projects();
 })
 
 

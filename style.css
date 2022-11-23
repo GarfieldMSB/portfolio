@@ -7,6 +7,10 @@
   font-family: "Poppins", sans-serif;
   font-weight: 800;
 }
+* h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
 * h3 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -14,6 +18,74 @@
 * p {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
+}
+
+.popout {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 70px;
+}
+@-webkit-keyframes ani {
+  0% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightblue;
+    color: black;
+  }
+  30% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightblue;
+    color: black;
+  }
+  70% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightblue;
+    color: black;
+  }
+  100% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightblue;
+    color: black;
+  }
+}
+@keyframes ani {
+  0% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightblue;
+    color: black;
+  }
+  30% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightblue;
+    color: black;
+  }
+  70% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightblue;
+    color: black;
+  }
+  100% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightblue;
+    color: black;
+  }
+}
+.popout span {
+  position: relative;
+  display: inline-block;
+  -webkit-animation: ani 1s infinite alternate cubic-bezier(0.86, 0, 0.07, 1);
+          animation: ani 1s infinite alternate cubic-bezier(0.86, 0, 0.07, 1);
+}
+.popout span:nth-last-child(1n) {
+  -webkit-animation-delay: -0.1666666667s;
+          animation-delay: -0.1666666667s;
+}
+.popout span:nth-last-child(2n) {
+  -webkit-animation-delay: -0.3333333333s;
+          animation-delay: -0.3333333333s;
+}
+.popout span:nth-last-child(3n) {
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
 }
 
 #particles-js {
@@ -33,10 +105,10 @@
   grid-template-areas: "sidebar inicio" "sidebar footer";
 }
 .grid-container .sidebar {
+  background-color: #060516;
+  grid-area: sidebar;
   height: 100vh;
   width: 100%;
-  grid-area: sidebar;
-  background-color: #060516;
 }
 .grid-container .sidebar .logo {
   width: 100%;
@@ -51,42 +123,84 @@
   text-decoration: none;
 }
 .grid-container .sidebar .menu a :hover {
-  transform: translateY(0) translateX(50px);
   background-color: #060516;
+  transform: translateY(0) translateX(50px);
   transition-duration: 600ms;
 }
 .grid-container .sidebar .menu .item {
   border-top: 1px solid #b38cda;
+  color: #CDCDCD;
   font-family: moonlight;
   height: 50px;
   text-align: center;
-  color: #CDCDCD;
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 .grid-container .sidebar .menu .item.activate {
   box-shadow: 0px 0.5px 0.5px #b38cda;
 }
 .grid-container .card {
-  width: 350px;
-  background-color: #058fad;
-  border: 2px solid #b38cda;
-  border-radius: 10px;
+  align-items: center;
+  background-color: #060516;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
   display: block;
-  align-items: center;
-}
-.grid-container .card .card-title, .grid-container .card .card-description {
-  width: 100%;
-  height: 50px;
-  display: flex;
   justify-content: center;
-  align-items: center;
+  width: 100%;
+  flex-direction: column;
 }
-.grid-container .card .card-img, .grid-container .card .card-description {
-  cursor: pointer;
+.grid-container .card a {
+  text-decoration: none;
+  color: #058fad;
+}
+.grid-container .card .card-title {
+  align-items: center;
+  display: flex;
+  color: #fff;
+  height: 60px;
+  margin-top: 10px;
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+}
+.grid-container .card .card-description {
+  font-size: 1.1rem;
+  padding: 20px;
+  text-align: left;
+  width: 100%;
 }
 .grid-container .card img {
+  border-radius: 5px 5px 0 0;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.grid-container .card .card-footer {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.grid-container .card .card-btn-container {
+  background-color: #CDCDCD;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.grid-container .card .card-btn {
+  align-items: center;
+  background-color: #CDCDCD;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  justify-content: center;
   width: 100%;
 }
 .grid-container .inicio {
@@ -115,9 +229,9 @@
 }
 .grid-container .inicio .container-section .container-projects {
   display: grid;
-  width: 90%;
+  width: 80%;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 50px;
+  gap: 50px;
 }
 .grid-container .inicio .container-slider {
   width: 100%;
@@ -157,10 +271,10 @@
   z-index: 99;
 }
 .grid-container .inicio .container-slider .slider .slider__btns .slider__btn--right {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .grid-container .inicio .container-slider .slider .slider__btns .slider__btn--left {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .grid-container .inicio .container-slider .slider .slider__btns .slider__btn {
   color: #fff;

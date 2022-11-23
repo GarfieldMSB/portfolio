@@ -1,0 +1,88 @@
+
+/*
+    -----------------------
+    TEXT
+    -----------------------
+*/
+
+.neon {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #8342fb;
+    font-size: 2vw;
+    line-height: 3vw;
+    text-shadow: 0 0 3vw #F40A35;
+}
+
+
+@keyframes neon {
+
+    0%,
+    100% {
+        text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+        color: #FED128;
+    }
+
+    50% {
+        text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+        color: #806914;
+    }
+}
+
+/*
+    -----------------------
+    Conteiners
+    -----------------------
+*/
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 99;
+}
+
+/*
+    -----------------------
+    Form
+    -----------------------
+*/
+
+form {
+    display: grid;
+    gap: 15px;
+    padding: 50px;
+    width: 60%;
+}
+
+input, textarea {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #060516;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 1.5rem;
+    height: 60px;
+    width: 100%;
+    padding: 10px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 1.5rem;
+    background-color: #060516;
+}
+
+input:focus-visible, textarea:focus-visible {
+    /* outline-color: #8342fb; */
+    background-color: #060516;
+}
+
+.textarea {
+    min-height: 250px;
+    max-width: 100%;
+}
+

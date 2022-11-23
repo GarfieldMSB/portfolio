@@ -8,6 +8,11 @@
         font-weight: 800;
     }
 
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
     h3 {
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
@@ -17,6 +22,51 @@
         font-family: 'Poppins', sans-serif;
         font-weight: 200;
     }
+}
+
+$t: 1s;
+$d: 0.08em;
+$n: 3;
+$e: cubic-bezier(0.860, 0.000, 0.070, 1.000); 
+$front: black;
+$back: lightblue;
+
+.popout{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 800;
+	font-size: 70px;
+
+	@keyframes ani{
+		0%{
+			transform: translate3d(0,0,0);
+			text-shadow: 0em 0em 0 $back;
+			color: $front;
+		}
+		30%{
+			transform: translate3d(0,0,0);
+			text-shadow: 0em 0em 0 $back;
+			color: $front;
+		}
+		70%{
+			transform: translate3d($d,-$d,0);
+			text-shadow: -$d $d $back;
+			color: $front;
+		}
+		100%{
+			transform: translate3d($d,-$d,0);
+			text-shadow: -$d $d $back;
+			color: $front;
+		}
+	}
+	span{
+		position: relative;
+		display: inline-block;
+		animation: ani $t infinite alternate $e;
+		@for $i from 1 through $n{
+			&:nth-last-child(#{$i}n){ animation-delay: -$t*$i/$n/2;}
+		}
+	}
+	
 }
 
 $negro: #060516;
@@ -48,10 +98,10 @@ $logo : #058fad;
 
 
     .sidebar {
+        background-color: $negro;
+        grid-area: sidebar;
         height: 100vh;
         width: 100%;
-        grid-area: sidebar;
-        background-color: $negro;
 
         .logo {
             width: 100%;
@@ -69,8 +119,8 @@ $logo : #058fad;
 
 
                 :hover {
-                    transform: translateY(0) translateX(50px);
                     background-color: $negro;
+                    transform: translateY(0) translateX(50px);
                     transition-duration: 600ms;
 
                 }
@@ -79,13 +129,13 @@ $logo : #058fad;
             .item {
 
                 border-top: 1px solid $moradoLight;
+                color: $grisLight;
                 font-family: moonlight;
                 height: 50px;
                 text-align: center;
-                color: $grisLight;
 
-                display: flex;
                 align-items: center;
+                display: flex;
                 justify-content: center;
 
                 &.activate {
@@ -97,26 +147,73 @@ $logo : #058fad;
     }
 
     .card {
-        width: 350px;
-        background-color: $logo;
-        border: 2px solid $moradoLight;
-        border-radius: 10px;
-        display: block;
         align-items: center;
+        background-color: $negro;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 5px;
+        display: block;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
 
-        .card-title, .card-description {
-            width: 100%;
-            height: 50px;
-            display: flex;
-            justify-content: center;
+        a { 
+            text-decoration: none;
+            color: $logo;
+        }
+
+        .card-title {
             align-items: center;
+            display: flex;
+            color: $blanco;
+            height: 60px;
+            margin-top: 10px;
+            padding: 20px;
+            text-align: left;
+            width: 100%;
         }
         
-        .card-img, .card-description{
-            cursor: pointer;
+        .card-description {
+            font-size: 1.1rem;
+            padding: 20px;
+            text-align: left;
+            width: 100%;
         }
 
+
         img {
+            border-radius: 5px 5px 0 0;
+            height: 180px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .card-footer {
+            align-items: flex-end;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card-btn-container {
+            background-color: $grisLight;
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            
+        }
+
+        .card-btn {
+            align-items: center;
+            background-color: $grisLight;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            height: 100%;
+            justify-content: center;
             width: 100%;
         }
     }
@@ -150,9 +247,9 @@ $logo : #058fad;
 
             .container-projects {
                 display: grid;
-                width: 90%;
+                width: 80%;
                 grid-template-columns: 1fr 1fr 1fr;
-                grid-row-gap: 50px;
+                gap: 50px;
                 
             }
         }
@@ -200,10 +297,10 @@ $logo : #058fad;
                     
 
                     .slider__btn--right {
-                             margin-right: 10px;
+                             margin-right: 20px;
                          }
                     .slider__btn--left {
-                             margin-left: 10px;
+                             margin-left: 20px;
                     }
 
                     .slider__btn {
