@@ -8,7 +8,7 @@ const projects = [
         githubPages: 'https://garfieldmsb.github.io/login-frontend/',
         description: 'Aplicacion de autenticacion para entrar a aplicacion con rutas publicas y privadas',
         technologies: '',
-        pathImg: 'img/login.png',
+        pathImg: './img/login.png',
         altImg: 'Proyecto login'
     },
     {
@@ -17,10 +17,11 @@ const projects = [
         githubPages: 'https://garfieldmsb.github.io/login-frontend/',
         description: 'Aplicacion para agregar, editar y eliminar citas de veterinaria',
         technologies: '',
-        pathImg: 'img/administradorCitas.png',
+        pathImg: './img/administradorCitas.png',
         altImg: 'Proyecto administrador de citas veterinaria'
     }
 ]
+
 
 const project = () => {
     document.addEventListener('DOMContentLoaded', printProjets(projects));
