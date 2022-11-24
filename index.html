@@ -12,8 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <title>Portada</title>
+    <title>Portafolio</title>
 </head>
 
 <body>
@@ -85,19 +86,24 @@
 
                     <div id="2" class="slider__section">
                         <div class="container-section">
-                            <!-- CONTENEDOR DE PROYECTOS --> 
+                            <!-- CONTENEDOR DE PROYECTOS -->
                             <div class="container-projects"></div>
                             <!-- FIN CONTENEDOR DE PROYECTOS -->
                         </div>
 
                     </div>
 
-                    <div id="3" class="slider__section">
+                    <div id="3" class="slider__section contact">
                         <div class="container">
-                            <form action="submit">
-                                <input placeholder="Correo" type="email">
-                                <input placeholder="Asunto" type="text">
-                                <textarea class='textarea' placeholder="Mensaje" type="text"></textarea>
+                            <form id="form" action="submit">
+                                <input id="name" name="name" placeholder="Nombre" type="text">
+                                <input id="email" name="email" placeholder="Correo" type="email">
+                                <input id="subject" name="subject" placeholder="Asunto" type="text">
+                                <textarea id="message" name="body" class='textarea' placeholder="Mensaje"
+                                    type="text"></textarea>
+                                <div class="container flex-center">
+                                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -134,6 +140,13 @@
     <!-- JS Particles -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="js/app.js" type="module"></script>
+    <script src="js/sendEmail.js" type="module"></script>
+
+    <!-- Email JS-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('E7TlvlfRh4XBNZ6T6')
+    </script>
 </body>
 
 </html>

@@ -5,6 +5,7 @@ import project from "./project.js";
 document.addEventListener("DOMContentLoaded", (e) => {
     project();
     slider();
+    
 })
 
 
