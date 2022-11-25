@@ -50,8 +50,7 @@ const formInputs = {
 // Add data to formInputs object
 const datosInput = (e) => {
     formInputs[e.target.name] = e.target.value;
-    console.log(formInputs);
-    
+
 }
 
 // Send Email
@@ -63,11 +62,25 @@ const sendEmail = (e) => {
     // Validate
     if (name === '' || email === '' || subject === '' || body === '') {
         ui.printAlert('Todos los campos son obligatorios', 'error')
-        return;           
+        return;
     }
 
-    ui.printAlert('Mensaje enviado correctamente')
+    btn.value = 'Sending...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_6af9d8i';
+
+    emailjs.sendForm(serviceID, templateID, form)
+        .then(() => {
+            ui.printAlert('Mensaje enviado correctamente');
+        }, (err) => {
+            btn.value = 'Send Email';
+            ui.printAlert(JSON.stringify(err), 'error');
+        });
+
+
     
+
     // Reset object
     resetFormObject();
 
